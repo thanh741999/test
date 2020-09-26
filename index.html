@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="mydiv">
+            {{message}}
+            <ul>
+                <li>{{array[0]}}</li>
+                <li>{{array[1]}}</li>
+                <li>{{obj.age}}</li>
+                <li>{{obj.add}}</li>
+                <li>{{message}}</li>
+            </ul>
+            {{message}}
+        </div>
+        <p class="mydiv">
+            {{message}}
+        </p>
+        <hr>
+        <!-- v-text, v-html -->
+        <div class="mytest" >
+            <h1 v-text='name'></h1>
+            <h2 v-text='info'>asdasda</h2>
+            <p v-html= 'content'></p>
+            <p v-text ='content'></p>
+        </div>
+        
+        
+        
+
+
+
+        
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var mydiv = new Vue({
+            el: ".mydiv",
+            data: {
+                message: 'hello',
+                array: ['kmin','vuejs'],
+                obj: {
+                    name: 'kmin',
+                    age: '5',
+                    add: 'q1'
+                }
+            }
+        });
+        var mytest = new Vue({
+            el: '.mytest',
+            data: {
+                name: 'Vue',
+                info: 'js',
+                content: '<h1>this is content</h1>',
+            },
+        });
+        
+    </script>
+</html>
