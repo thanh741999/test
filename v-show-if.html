@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="v-show">
+            <input type="button" value="Button" v-on:click="vOn"> 
+            <h1 v-show="show">V Show</h1>
+            <h1 v-if="show">V If</h1>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var vShow = new Vue({
+            el:('#v-show'),
+            data: {
+                show: true,
+            },
+            methods: {
+                vOn: function() {
+                    if (vShow.show == true)
+                    vShow.show = false;
+                    else {
+                        vShow.show = true;
+                    }
+                }
+             }
+        })
+    </script>
+</html>
