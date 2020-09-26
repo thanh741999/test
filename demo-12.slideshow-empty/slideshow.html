@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Demo Slideshow</title>
+  <link type="text/css" href="slideshow.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="slideshow">
+    <img :src="imgArray[index]" style="width:100%">
+    <a class="truoc" v-on:click="hienThiSlideTruocDo()">&#10094;</a>
+    <a class="sau" v-on:click="hienThiSlideKeTiep()">&#10095;</a>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+  var slide = new Vue({
+    el:'.slideshow',
+    data: {
+      imgArray: [
+        'anh1.jpg',
+        'anh2.jpg',
+        'anh3.jpg',
+        'anh4.jpg',
+      ],
+      index: 0,
+    },
+    methods:{
+      hienThiSlideKeTiep: function() {
+        slide.index++;
+        if(slide.index >= 4)
+        slide.index = 0;
+      },
+      hienThiSlideTruocDo: function() {
+        slide.index--;
+        if(slide.index <= 0)
+        slide.index = 3;
+        
+      }
+    }
+  })
+</script>
+</html>
